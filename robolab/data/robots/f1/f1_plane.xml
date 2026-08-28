@@ -1,0 +1,15 @@
+<mujoco model="f1_plane">
+  <include file="f1_sim2sim.xml"/>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.68 0.84 0.98" rgb2="0.90 0.95 1.0" width="512" height="512"/>
+    <texture name="f1_ground_tex" type="2d" builtin="checker" width="512" height="512" rgb1="0.92 0.92 0.94" rgb2="0.76 0.76 0.82"/>
+    <material name="f1_ground_mat" texture="f1_ground_tex" texrepeat="20 20" texuniform="true" reflectance="0.08"/>
+  </asset>
+
+  <worldbody>
+    <light directional="true" diffuse="0.7 0.7 0.7" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
+    <geom name="ground" type="plane" size="0 0 0.05" material="f1_ground_mat"
+          condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+  </worldbody>
+</mujoco>

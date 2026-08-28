@@ -1,0 +1,29 @@
+<mujoco model="f1_stairs">
+  <include file="f1_sim2sim.xml"/>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.68 0.84 0.98" rgb2="0.90 0.95 1.0" width="512" height="512"/>
+    <texture name="f1_stairs_ground_tex" type="2d" builtin="checker" width="512" height="512" rgb1="0.92 0.92 0.94" rgb2="0.76 0.76 0.82"/>
+    <material name="f1_stairs_ground_mat" texture="f1_stairs_ground_tex" texrepeat="20 20" texuniform="true" reflectance="0.08"/>
+    <material name="f1_stair_tread_mat" rgba="0.76 0.55 0.36 1" reflectance="0.05"/>
+  </asset>
+
+  <worldbody>
+    <light directional="true" diffuse="0.7 0.7 0.7" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
+    <geom name="ground" type="plane" size="0 0 0.05" material="f1_stairs_ground_mat"
+          condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+
+    <!-- A deterministic 10 cm parkour staircase in the robot's +X direction. -->
+    <body name="parkour_stairs">
+      <geom name="stair_up_1" type="box" pos="1.35 0 0.05" size="0.15 1.0 0.05" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+      <geom name="stair_up_2" type="box" pos="1.65 0 0.10" size="0.15 1.0 0.10" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+      <geom name="stair_up_3" type="box" pos="1.95 0 0.15" size="0.15 1.0 0.15" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+      <geom name="stair_up_4" type="box" pos="2.25 0 0.20" size="0.15 1.0 0.20" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+      <geom name="stair_platform" type="box" pos="3.15 0 0.20" size="0.75 1.0 0.20" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+      <geom name="stair_down_1" type="box" pos="4.05 0 0.20" size="0.15 1.0 0.20" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+      <geom name="stair_down_2" type="box" pos="4.35 0 0.15" size="0.15 1.0 0.15" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+      <geom name="stair_down_3" type="box" pos="4.65 0 0.10" size="0.15 1.0 0.10" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+      <geom name="stair_down_4" type="box" pos="4.95 0 0.05" size="0.15 1.0 0.05" material="f1_stair_tread_mat" condim="3" contype="1" conaffinity="1" friction="1.0 0.005 0.0001"/>
+    </body>
+  </worldbody>
+</mujoco>

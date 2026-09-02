@@ -73,7 +73,7 @@ python robolab/scripts/tools/list_envs.py
 ### 训练
 
 ```bash
-python robolab/scripts/rsl_rl/train.py --task=<ENV_NAME> --headless --logger=tensorboard --num_envs=8192
+python robolab/scripts/rsl_rl/train.py --task=F1-Parkour --headless --logger=tensorboard --num_envs=2048
 ```
 
 ### 测试
